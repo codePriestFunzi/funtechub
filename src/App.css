@@ -1,38 +1,766 @@
-.App {
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nav {
+  background-color: black;
+  padding: 8px 3%;
+  color: white;
+  font-size: 17px;
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .mylogo img {
+  max-width: 12rem;
+}
+.nav a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.bb {
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.space img {
+  margin-left: 10px;
+}
+
+.cart {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cart img {
+  max-width: 25px;
+}
+.main {
+  margin: 4% 0px 0;
+  /* margin: 2% 6.5%; */
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+}
+
+/* .left {
+  
+} */
+
+.right {
+  width: 50vw;
+  box-shadow: 0px 4px 29px #f0f3ff;
+  border-radius: 35px;
+  padding: 30px 15px;
+  position: relative;
+}
+
+.two {
+  padding-left: 20px;
+}
+.one {
+  padding: 30px 20px 40px 60px;
+}
+
+.profile {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-img img {
+  width: 210px;
+  height: 230px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+
+.upload {
+  position: absolute;
+  margin-top: 13rem;
+  background-color: rgba(128, 11, 101, 1);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.upload img {
+  max-width: 22px;
+  border-radius: 50%;
+  display: flex;
+  position: relative;
+  filter: invert(1);
+}
+
+.profile-img li:nth-child(2) {
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: bold;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menus ul li,
+.profile ul li {
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li a {
+  text-decoration: none;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10px;
+}
+
+.menu li img:nth-child(1) {
+  background: rgba(241, 243, 253, 1);
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+
+.menu li img:nth-child(2) {
+  filter: invert(1);
+}
+
+.menu li:hover,
+.acts {
+  background: rgba(241, 243, 253, 1);
+  padding: 0;
+  border-radius: 15px;
+}
+
+.menu li:nth-child(4) {
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu li:nth-child(4):hover {
+  background: none;
+}
+
+.menu li:nth-child(4) a:hover {
+  color: red;
+  font-weight: bold;
+}
+
+.profile-title {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-title img {
+  background: rgba(241, 243, 253, 1);
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+
+.section ol {
+  list-style: none;
+  position: relative;
+  counter-reset: li;
+}
+
+.one .section li {
+  position: relative;
+}
+
+.section li::before {
+  position: absolute;
+  content: counter(li);
+  color: rgba(128, 11, 101, 1);
+  display: inline-block;
+  margin-left: -2em;
+  font-weight: bold;
+  margin-right: 50px;
+}
+
+.section li {
+  margin-bottom: 35px;
+  counter-increment: li;
+}
+
+.section label {
+  display: block;
+  font-size: 18px;
+  top: 0;
+  margin-top: 20px;
+  margin-bottom: 17px;
+}
+
+.section-1 button {
+  padding: 10px 12px;
+  margin-right: 2em;
+  border-radius: 8px;
+  border: none;
+  border-color: rgba(241, 243, 253, 1);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.section input {
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  background: rgba(241, 243, 253, 1);
+}
+
+.tick {
+  position: absolute;
+  margin-top: -20px;
+  right: 20px;
+  background-color: rgba(128, 11, 101, 1);
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.tick img {
+  width: 21px;
+  height: 20px;
+  display: flex;
+  filter: invert(4);
+}
+
+.course_study input,
+.graduate,
+.yesGraduate input,
+.notCompleted input {
+  margin-top: 10px;
+  margin-right: 18px;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 45%;
+  background: rgba(241, 243, 253, 1);
+}
+
+.graduate {
+  padding: 0;
+}
+
+.completed {
+  margin-left: 25px;
+}
+
+.next button {
+  position: absolute;
+  background: blue;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+/* styles fpor range */
+
+/* .section-2 {
+  box-shadow: 0px 4px 29px #f0f3ff;
+  border-radius: 35px;
+  padding: 30px 40px 0px;
+  position: absolute;
+  width: 50%;
+} */
+
+.box {
+  width: 45%;
+  margin-bottom: 40px;
+}
+
+.section-level {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.section-level label,
+h3 i {
+  display: inline-block;
+  margin: 0 40% 10px 5px;
+  color: rgba(172, 183, 235, 1);
+  font-size: 18px;
+}
+
+.d-none {
+  display: none;
+  color: red;
+}
+
+.d-block {
+  display: block;
+}
+
+.fool {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.section-level input {
+  position: relative;
+  width: 90%;
+}
+
+.done {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 15px;
+}
+.done button {
+  background: blue;
+  color: white;
+
+  padding: 8px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.done button:hover {
+  background: grey;
+}
+
+/* end */
+
+/* styles for profile/ */
+
+.profile_logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  gap: 2rem;
+}
+
+.profile_logo img {
+  background: rgba(241, 243, 253, 1);
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+
+.part-1 {
+  display: flex;
+  margin-top: 30px;
+  box-shadow: 0px 4px 29px #f0f3ff;
+  border-radius: 35px;
+  padding: 20px 15px;
+  position: relative;
+  gap: 10px;
+}
+
+.part-1 label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.part-1 input {
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  background: rgba(241, 243, 253, 1);
+}
+
+.slider {
+  appearance: none;
+  height: 8px;
+  background: #d3d3d3;
+  border-radius: 10px;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: rgba(128, 11, 101, 1);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.section-3 .tick {
+  margin-top: -35px;
+}
+
+.interest {
+  display: block;
+}
+
+.interest .section-level {
+  height: 15vh;
+  overflow: auto;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/* hide scrollbar */
+.interest .section-level::-webkit-scrollbar {
+  display: none;
+}
+
+.yesNo {
+  position: absolute;
+  display: flex;
+  top: 5px;
+  left: 40%;
+}
+
+.yes1,
+.yes2,
+.yes3,
+.yes4 {
+  color: rgba(128, 11, 101, 1);
+  font-weight: bold;
+  /* display: none; */
+}
+
+.no1,
+.no2,
+.no3,
+.no4 {
+  color: grey;
+  font-weight: bold;
+  /* display: none; */
+}
+
+.yesN {
+  position: relative;
+  display: flex;
+  top: -2.2rem;
+  left: 47%;
+}
+
+.yesNon {
+  position: absolute;
+  margin-bottom: 0;
+  top: 0.1rem;
+  right: -50px;
+}
+
+/* courses style */
+.coirse {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.course-wrap {
+  margin-top: 10px;
+  box-shadow: 0px 4px 29px #f0f3ff;
+  padding: 0.5em 10px;
+  border-radius: 20px;
+  height: 18vh;
+  width: 23vw;
+  font-size: 16px;
+  font-weight: bold;
+}
+.course-wrap div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-wrap div:nth-child(2) {
+  margin-top: 10px;
+}
+
+.course-wrap ul {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.course-wrap img {
+  max-width: 20px;
+}
+
+.remove-course,
+.take-course {
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 5px;
+  color: red;
+  cursor: pointer;
+}
+
+.remove-course a {
+  color: rgba(128, 11, 101, 1);
+}
+
+.remove-course a:hover,
+.take-course {
+  color: green;
+}
+
+/* attendance styles */
+
+.attendanc th {
+  text-align: left;
+}
+
+.attendanc td {
+  padding: 10px;
+}
+
+.attendanc table {
+  margin-top: 15px;
+  width: 100%;
+  table-layout: fixed;
+  box-shadow: 0px 4px 29px #f0f3ff;
+  padding: 0.5em 10px;
+  border-radius: 20px;
+}
+
+/* signup styles */
+.signup {
+  width: 100%;
+  margin-top: 4%;
+}
+
+.signup form {
+  display: flex;
+  flex-direction: column;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 35vw;
+  box-shadow: 0px 4px 29px #f0f3ff;
+  position: relative;
+  padding: 20px;
+}
+.signup form input {
+  display: block;
+  width: 100%;
+  height: 8vh;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.signup form input::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.par {
+  margin: 3% 10px;
+  text-align: center;
+}
+
+.signup button {
+  width: 100%;
+  height: 8vh;
+  color: white;
+  background: rgba(128, 11, 101, 1);
+  font-weight: bold;
+}
+
+.recieve-news {
+  display: flex;
+  margin: 3% 0;
+  width: 100%;
+  gap: 0;
+  justify-content: none;
+  align-items: none;
+  gap: 1rem;
+  align-items: center;
+}
+
+#radio {
+  border: 2px solid black;
+  height: 25px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.signup a {
+  color: rgba(128, 11, 101, 1);
+  font-weight: bold;
+}
+
+/* Teach css */
+.teach {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 7%;
+  height: 91.5vh;
+  width: 98.7vw;
+  background: url(./images/teach.jpg);
+  background-repeat: no-repeat;
+  background-size: 120vw 91.5vh;
+}
+
+.teach h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 52px;
+  font-weight: bold;
+  width: 30%;
+  line-height: 62px;
+}
+
+.teach p {
+  font-size: 22px;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.teach button {
+  width: 30%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+
+.t-start {
+  margin: 50px 10px;
+}
+.t-start h2,
+.t-begin h2 {
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.t-flex {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+}
+
+.t-flex div {
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.t-title {
+  display: flex;
+  font-size: 23px;
+  font-weight: bold;
+  color: grey;
+  gap: 4rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.t-title div {
+  cursor: pointer;
+}
+
+.t-titles {
+  border-bottom: 4px solid purple;
+  color: black;
+}
+
+.t-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2% 20%;
+  font-size: 18px;
+}
+
+.t-toggle div {
+  width: 50%;
+}
+
+.t-toggle img {
+  max-width: 120%;
+}
+
+.t-alone {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+}
+
+.t-alone h2, .t-become h2 {
+  margin-bottom: 15px;
+  font-size: 34px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.t-alone img {
+  max-width: 25rem;
+}
+
+.t-become {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6% 0 10% ;
+  font-size: 23px;
+  background: rgba(220, 235, 232, 0.726);
+}
+.t-become button {
+  margin-top: 20px;
+  width: 35%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
   color: white;
+  background-color: black;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+
+.hide {
+cursor: pointer;
+top: 30%;
+position: absolute;
+right: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.f-hide {
+  max-width: 25px;
+  
+  
+}
+
+.signup .test {
+  position: relative;
+  
 }
